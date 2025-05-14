@@ -1,0 +1,32 @@
+{
+    "name": "jmf/http-client",
+    "description" : "HTTP client",
+    "license": "mit",
+    "type": "library",
+    "require": {
+        "php": ">=8.4",
+        "jmf/curl-client": "^1.0",
+        "webmozart/assert": "^1.11"
+    },
+    "require-dev": {
+        "phpmd/phpmd": "^2.13",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.0",
+        "rector/rector": "^2.0",
+        "squizlabs/php_codesniffer": "^3.8"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Jmf\\HttpClient\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jmf\\HttpClient\\": "tests"
+        }
+    }
+}
