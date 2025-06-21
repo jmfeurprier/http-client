@@ -133,17 +133,15 @@ readonly class HttpClient implements HttpClientInterface
 
             Assert::string($responseContent);
 
-            $position = $this->getHeaderSize($result);
-
+            $position      = $this->getHeaderSize($result);
             $headerContent = substr($responseContent, 0, $position);
-            $headers       = preg_split('|\\r\\n|', $headerContent, -1, PREG_SPLIT_NO_EMPTY);
         } else {
             $headerContent = $result->getResponseContent();
 
             Assert::string($headerContent);
-
-            $headers = explode("\r\n", $headerContent);
         }
+
+        $headers = preg_split('|\\r\\n|', $headerContent, -1, PREG_SPLIT_NO_EMPTY);
 
         Assert::allStringNotEmpty($headers);
 
